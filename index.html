@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>YOPAC GrantSeekr – Live Global Grant Explorer</title>
+  <link rel="stylesheet" href="./style.css" />
+  <script>window.SNAPSHOT = [{"title": "AmeriCorps State and National Grants", "org": "AmeriCorps", "amount": "$100,000–$500,000", "deadline": "2025-11-01", "region": "USA", "apply_url": "https://americorps.gov/funding-opportunity/americorps-state-and-national-grants", "summary": "Funds organizations engaging Americans in service to address community needs."}, {"title": "UNICEF Innovation Fund – Education & Digital Learning", "org": "UNICEF", "amount": "Up to $100,000 equity-free", "deadline": "2025-09-30", "region": "Global", "apply_url": "https://www.unicef.org/innovation/innovation-fund", "summary": "Backs open-source solutions improving learning outcomes and access."}];</script>
+  <script src="./config.js"></script>
+  <script defer src="./script.js"></script>
+</head>
+<body>
+  <div class="topbar">
+    <div class="brandwrap">
+      <div class="brandtext">
+        <div class="logo-badge">YOPAC GrantSeekr</div>
+        <div class="subtitle">Live Global Grant Explorer</div>
+        <div class="stamp" id="lastUpdated">Last Updated: —</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="filters" role="region" aria-label="Filters">
+      <select id="scope" aria-label="Scope">
+        <option value="All">All Grants</option>
+        <option value="USA">United States</option>
+        <option value="INTL">International</option>
+      </select>
+      <select id="org" aria-label="Funding Organization">
+        <option value="All">All Funders</option>
+      </select>
+      <select id="deadline" aria-label="Deadline">
+        <option value="Any">Any Deadline</option>
+        <option value="30">Within 30 days</option>
+        <option value="60">Within 60 days</option>
+        <option value="90">Within 90 days</option>
+      </select>
+      <button id="exportCsv">Export CSV</button>
+    </div>
+
+    <div id="grid" class="grid" aria-live="polite" aria-busy="false"></div>
+    <div id="empty" class="empty" style="display:none">No grants match your filters yet.</div>
+  </div>
+
+  <div class="footer">
+    <details open>
+      <summary>About this Data</summary>
+      <div>Grants are aggregated from publicly available, official sources. Verify deadlines and eligibility on the funder’s website.</div>
+    </details>
+    <details>
+      <summary>Data Sources (examples)</summary>
+      <ul>
+        <li><strong>U.S. Government:</strong> Grants.gov, SAM.gov</li>
+        <li><strong>Multilateral:</strong> European Commission, World Bank, AfDB, AsDB</li>
+        <li><strong>Foundations/Agencies:</strong> Ford, Gates, OSF, UNICEF, Global Fund</li>
+      </ul>
+    </details>
+    <details>
+      <summary>Disclaimer</summary>
+      <div>Links are provided for convenience; always confirm details on the official portal.</div>
+    </details>
+  </div>
+</body>
+</html>
